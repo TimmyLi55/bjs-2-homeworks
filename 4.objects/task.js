@@ -16,7 +16,7 @@ Student.prototype.addMarks = function (...marks) {
 
 Student.prototype.getAverage = function () {
   let result = 0;
-  if (this.marks !== undefined) {
+  if (this.marks !== undefined && this.marks.length > 0) {
     this.marks.reduce((acc, element, index, arr) => {
         acc += element;
         if (index === arr.length - 1) {
@@ -29,7 +29,7 @@ Student.prototype.getAverage = function () {
 }
 
 Student.prototype.exclude = function (reason) {
-  this.exclude = reason;
+  this.excluded = reason;
   delete this.subject;
   delete this.marks;
 }
