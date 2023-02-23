@@ -10,7 +10,7 @@ class AlarmClock {
         }
 
         if (this.alarmCollection.find(item => item.time == time)) {
-            return console.warn('Уже присутствует звонок на это же время');
+            console.warn('Уже присутствует звонок на это же время');
         }
 
         this.alarmCollection.push({time, callback, canCall:true});
